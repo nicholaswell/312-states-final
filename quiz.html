@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel = "icon" type = "image/x-icon" href="images/favicon-16x16.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet/less" type="text/css" href="styles.less"/>
+    <script src="https://cdn.jsdelivr.net/npm/less" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="getStates.js" defer></script>
+    <script src="webApp.js" defer></script>
+</head>
+<body>
+    <!-- Start Nav Bar -->
+    <div class = "sticky-top">
+        <nav id="navbar">
+            <a class="hamburger" href="#navbar">
+                <i class="bi bi-list" id = "open-bars"></i>
+            </a>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="stateSearch.html">State Search</a>
+                </li>
+                <li>
+                    <a href="quiz.html">Quiz</a>
+                </li>
+              </a>
+            </ul>
+            <a class="close" href="#">
+                <i class="bi bi-x"></i>
+              </a>
+        </nav>
+    </div>
+        <!-- End Nav Bar -->
+    <!-- Start Header -->
+    <div class="container-fluid shadow text-center text-light" id = "header">
+        <h1 class = "title">Take the Quiz</h1>
+        <h5>Take this quick 10 question quiz to test your knowledge!</h5>
+    </div>
+    <!-- End Header -->
+
+    <!-- Start Main Content Container -->
+    <div class = "container-fluid mt-3">
+        <!-- Start Row 1 -->
+        <div class = "row justify-content-center my-5">
+            <!-- Start Column 1 -->
+            <div class = "col-lg-6">
+                <form class = "shadow rounded" style = "border: 1px; border-style: solid; border-color: lightgrey">
+                    <div class = "text-center mt-5">
+                        <h2>States Quiz</h2>
+                        <p>This quiz involves 10 questions. Good luck!</p>
+                    </div>
+                    <!-- Question 1 -->
+                        <div class = "form-group m-3">
+                            <label for="Question 1" class = "form-label">1. What is the capital of Alabama?</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question-1-radio" id="exampleRadios1">
+                                <label class="form-check-label" for="exampleRadios1">Atlanta</label>
+                            </div>
+                            <div class = "form-check">
+                                <input class="form-check-input" type="radio" name="question-1-radio" id="exampleRadios2">
+                                <label class="form-check-label" for="exampleRadios2">Montgomery</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question-1-radio" id="exampleRadios3">
+                                <label class="form-check-label" for="exampleRadios3">Topeka</label>
+                            </div>
+                            <div class = "form-check">
+                                <input class="form-check-input" type="radio" name="question-1-radio" id="exampleRadios4">
+                                <label class="form-check-label" for="exampleRadios4">Columbus</label>
+                            </div>
+                        </div>
+                    <!-- Question 2 -->
+                    <div class = "form-group m-3">
+                        <label for="Question 2" class = "form-label">2. True or False: Fishing is one of the major industries in Oregon</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question-2-radio" id="exampleRadios5">
+                            <label class="form-check-label" for="exampleRadios5">True</label>
+                        </div>
+                        <div class = "form-check">
+                            <input class="form-check-input" type="radio" name="question-2-radio" id="exampleRadios6">
+                            <label class="form-check-label" for="exampleRadios6">False</label>
+                        </div>
+                    </div>
+                    <!-- Question 3 -->
+                    <div class = "form-group m-3">
+                        <label for="Question 3" class = "form-label">3. What is the land mass of Arkansas in sq. ft.?</label>
+                        <input type="text" class="form-control" id="input1" aria-describedby="inputHelp" placeholder="Enter only numbers">
+                    </div>
+                    <!-- Question 4 -->
+                    <div class = "form-group m-3">
+                        <label for="Question 4" class = "form-label">4. True or False: Kentucky is known as the bluegrass state</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question-4-radio" id="exampleRadios7">
+                            <label class="form-check-label" for="exampleRadios7">True</label>
+                        </div>
+                        <div class = "form-check">
+                            <input class="form-check-input" type="radio" name="question-4-radio" id="exampleRadios8">
+                            <label class="form-check-label" for="exampleRadios8">False</label>
+                        </div>
+                    </div>
+                    <!-- Question 5 -->
+                    <div class = "form-group m-3">
+                        <label for="Question 5" class = "form-label">5. What is one of the tourist attractions of North Carolina?</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question-5-radio" id="exampleRadios9">
+                            <label class="form-check-label" for="exampleRadios9">Blue Ridge Parkway</label>
+                        </div>
+                        <div class = "form-check">
+                            <input class="form-check-input" type="radio" name="question-5-radio" id="exampleRadios10">
+                            <label class="form-check-label" for="exampleRadios10">Connor Prairie</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question-5-radio" id="exampleRadios11">
+                            <label class="form-check-label" for="exampleRadios11">Amana Colonies</label>
+                        </div>
+                        <div class = "form-check">
+                            <input class="form-check-input" type="radio" name="question-5-radio" id="exampleRadios12">
+                            <label class="form-check-label" for="exampleRadios12">Country Music Hall of Fame</label>
+                        </div>
+                    </div>
+                    <!-- Question 6 -->
+                    <div class = "form-group m-3">
+                        <label for="Question 6" class = "form-label">6. What is the population of Indiana?</label>
+                        <input type="text" class="form-control" id="input2" aria-describedby="inputHelp" placeholder="Enter only numbers">
+                    </div>
+                    <!-- Question 7 -->
+                    <div class = "form-group m-3">
+                        <label for="Question 7" class = "form-label">7. True or False: Montana's date of statehood is October 8, 1889</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question-7-radio" id="exampleRadios13">
+                            <label class="form-check-label" for="exampleRadios13">True</label>
+                        </div>
+                        <div class = "form-check">
+                            <input class="form-check-input" type="radio" name="question-7-radio" id="exampleRadios14">
+                            <label class="form-check-label" for="exampleRadios14">False</label>
+                        </div>
+                    </div>
+                    <!-- Question 8 -->
+                    <div class = "form-group m-3">
+                        <label for="Question 8" class = "form-label">8. What is one of the major industries of West Virginia?</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question-8-radio" id="exampleRadios15">
+                            <label class="form-check-label" for="exampleRadios15">Cybersecurity</label>
+                        </div>
+                        <div class = "form-check">
+                            <input class="form-check-input" type="radio" name="question-8-radio" id="exampleRadios16">
+                            <label class="form-check-label" for="exampleRadios16">Agriculture</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question-8-radio" id="exampleRadios17">
+                            <label class="form-check-label" for="exampleRadios17">Technology</label>
+                        </div>
+                        <div class = "form-check">
+                            <input class="form-check-input" type="radio" name="question-8-radio" id="exampleRadios18">
+                            <label class="form-check-label" for="exampleRadios18">Coal Mining</label>
+                        </div>
+                    </div>
+                    <!-- Question 9 -->
+                    <div class = "form-group m-3">
+                        <label for="Question 4" class = "form-label">9. True or False: The first ambulance service was established in Ohio</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question-9-radio" id="exampleRadios19">
+                            <label class="form-check-label" for="exampleRadios19">True</label>
+                        </div>
+                        <div class = "form-check">
+                            <input class="form-check-input" type="radio" name="question-9-radio" id="exampleRadios20">
+                            <label class="form-check-label" for="exampleRadios20">False</label>
+                        </div>
+                    </div>
+                    <!-- Question 10 -->
+                    <div class = "form-group m-3">
+                        <label for="Question 10" class = "form-label">10. What is Florida's Date of Statehood?</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question-10-radio" id="exampleRadios21">
+                            <label class="form-check-label" for="exampleRadios21">January 17th, 1839</label>
+                        </div>
+                        <div class = "form-check">
+                            <input class="form-check-input" type="radio" name="question-10-radio" id="exampleRadios22">
+                            <label class="form-check-label" for="exampleRadios22">February 26, 1843</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question-10-radio" id="exampleRadios23">
+                            <label class="form-check-label" for="exampleRadios23">March 3, 1845</label>
+                        </div>
+                        <div class = "form-check">
+                            <input class="form-check-input" type="radio" name="question-10-radio" id="exampleRadios24">
+                            <label class="form-check-label" for="exampleRadios24">November 15th, 1845</label>
+                        </div>
+                    </div>
+                    <div class = "d-flex justify-content-center">
+                        <button type="submit" class="btn submit-btn m-3">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <!-- End Column 1 -->
+        </div>
+        <!-- End Row 1 -->
+    </div>
+    <!-- End Main Content Container -->
+    <!-- Start Footer -->
+    <div class="container-fluid shadow p-5 text-center text-light mt-5 footer">
+        <h5>Copyright 2023©</h5>
+    </div>
+    <!-- End Footer -->
+</body>
+</html>
